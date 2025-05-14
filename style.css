@@ -109,6 +109,51 @@ h2 {
     background: var(--light);
 }
 
+
+
+
+
+
+
+/* ====================== */
+/* Version Info Box       */
+/* ====================== */
+.version-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.version-box p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: var(--dark);
+    text-align: center;
+}
+
+.version-box strong {
+    color: var(--primary);
+}
+
+/* For dark sections (like hero) */
+.dark-section .version-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-section .version-box p {
+    color: white;
+}
+
+.dark-section .version-box strong {
+    color: var(--light);
+}
+
+
+
 footer {
     background: var(--dark);
     color: white;
