@@ -19,41 +19,40 @@ body {
     overflow-x: hidden;
 }
 
-/* Animated Background Header */
+
+
+/* Animated Gradient Header */
 header {
-    background: linear-gradient(
-        90deg,
-        var(--gradient-start),
-        var(--gradient-mid),
-        var(--gradient-end)
-    );
-    background-size: 400% 400%;
-    animation: gradientFlow 12s ease infinite;
+    background: linear-gradient(270deg, #375a1e, #3205ff, #3532a0);
+    background-size: 600% 600%;
+    animation: GradientFlow 12s ease infinite;
     color: white;
     text-align: center;
     padding: 3rem 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
 }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes GradientFlow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
 }
 
-/* Logo Animation */
 .logo {
     height: 80px;
     margin-bottom: 1rem;
-    transition: transform 0.5s ease;
     filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+    transition: transform 0.5s ease;
 }
 
 .logo:hover {
-    transform: rotate(15deg) scale(1.1);
+    transform: rotate(5deg) scale(1.1);
 }
+
+
+
 
 /* Hero Section */
 .hero {
