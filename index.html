@@ -133,42 +133,7 @@
 
 
 
-    <script>
-        // Scroll reveal animation
-        const scrollReveal = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            reveals.forEach(reveal => {
-                const windowHeight = window.innerHeight;
-                const revealTop = reveal.getBoundingClientRect().top;
-                const revealPoint = 100;
-                
-                if (revealTop < windowHeight - revealPoint) {
-                    reveal.classList.add('active');
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', scrollReveal);
-        window.addEventListener('load', scrollReveal);
-        
-        // Section appear animation
-        const sections = document.querySelectorAll('section');
-        
-        const checkSectionVisibility = () => {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight - 100) {
-                    section.classList.add('visible');
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', checkSectionVisibility);
-        window.addEventListener('load', checkSectionVisibility);
-    </script>
-
-
+    
 </body>
 </html>
 
