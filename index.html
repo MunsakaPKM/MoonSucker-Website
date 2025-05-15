@@ -543,16 +543,13 @@
         </div>
     </section>
 
-
-
-    
     <div id="messageModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h3>Your Message</h3>
+            <h3>Confirm Your Message</h3>
             <p id="modalMessage"></p>
             <div class="modal-buttons">
-                <button onclick="sendMessage()" class="cta-button">Send</button>
+                <button onclick="submitForm()" class="cta-button">Send</button>
                 <button onclick="closeModal()" class="secondary-button">Cancel</button>
             </div>
         </div>
@@ -560,22 +557,46 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 MoonSucker Water Network Management Software</p>
+            <p>© 2025 MoonSucker Water Network Management</p>
             <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
         </div>
     </footer>
-    
+
+    <form id="messageForm" action="https://formspree.io/f/xvgaddbb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <div class="form-buttons">
+            <button type="button" onclick="showPreview()">Preview Message</button>
+            <button type="button" onclick="document.getElementById('messageForm').reset()">Clear</button>
+        </div>
+    </form>
+
     <script>
+        // Modal functions
         function closeModal() {
             document.getElementById('messageModal').style.display = 'none';
         }
-        document.getElementById('messageForm').addEventListener('submit', function() {
-            setTimeout(() => {
-                alert('Message sent successfully! We will respond soon.');
-                this.reset();
-                closeModal();
-            }, 1000);
-        });
+
+        function showPreview() {
+            const form = document.getElementById('messageForm');
+            document.getElementById('modalMessage').innerHTML = `
+                <strong>Name:</strong> ${form.elements.name.value}<br>
+                <strong>Email:</strong> ${form.elements.email.value}<br>
+                <strong>Subject:</strong> ${form.elements.subject.value}<br>
+                <strong>Message:</strong> ${form.elements.message.value}
+            `;
+            document.getElementById('messageModal').style.display = 'flex';
+        }
+
+        function submitForm() {
+            document.getElementById('messageForm').submit();
+            alert('Message sent successfully!');
+            closeModal();
+        }
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -585,6 +606,6 @@
             });
         });
     </script>
-
+    
 </body>
 </html>
