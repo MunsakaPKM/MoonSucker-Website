@@ -560,47 +560,22 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 MoonSucker Water Network Management</p>
+            <p>© 2025 MoonSucker Water Network Management Software</p>
             <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
         </div>
     </footer>
-
+    
     <script>
-        // Form submission handler
-        document.getElementById('messageForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = this.elements[0].value;
-            const email = this.elements[1].value;
-            const subject = this.elements[2].value;
-            const message = this.elements[3].value;
-            
-            // Display in modal
-            document.getElementById('modalMessage').innerHTML = `
-                <strong>Name:</strong> ${name}<br>
-                <strong>Email:</strong> ${email}<br>
-                <strong>Subject:</strong> ${subject}<br>
-                <strong>Message:</strong> ${message}
-            `;
-            
-            // Show modal
-            document.getElementById('messageModal').style.display = 'flex';
-        });
-        
-        // Close modal
         function closeModal() {
             document.getElementById('messageModal').style.display = 'none';
         }
-        
-        // Send message (simulated)
-        function sendMessage() {
-            alert('Message sent successfully! We will respond soon.');
-            document.getElementById('messageForm').reset();
-            closeModal();
-        }
-        
-        // Smooth scrolling for anchor links
+        document.getElementById('messageForm').addEventListener('submit', function() {
+            setTimeout(() => {
+                alert('Message sent successfully! We will respond soon.');
+                this.reset();
+                closeModal();
+            }, 1000);
+        });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -610,5 +585,6 @@
             });
         });
     </script>
+
 </body>
 </html>
